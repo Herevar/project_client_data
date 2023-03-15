@@ -28,12 +28,12 @@ app.get('/', (req,res)=>{
     res.render('test')
 })
 app.get('/test', (req,res)=>{
-    db.create(
-        {"name" : "pjoter",
-        "email" : "test@pl", }
+    db.update('22279727-7622-44ca-af2e-23418b20eee6',
+        {
+        "email" : "qpa@qpa.pl", }
     )
    res.send('poszło /test ')
 })
 
 
-app.listen(3001, 'localhost', ()=> {console.log("listening on localhost 3001")})
+app.listen(3003, 'localhost', ()=> {console.log("listening on localhost 3003")})
