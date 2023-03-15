@@ -3,6 +3,7 @@ const { urlencoded } = require('express');
 const hbs = require('express-handlebars');
 const { clientRouter } = require('./routers/client');
 const { homeRouter } = require('./routers/home');
+const { db } = require('./utils/db');
 
 
 const app = express();
@@ -26,7 +27,13 @@ app.use('/client', clientRouter)
 app.get('/', (req,res)=>{
     res.render('test')
 })
+app.get('/test', (req,res)=>{
+    db.create(
+        {"name" : "pjoter",
+        "email" : "test@pl", }
+    )
+   res.send('poszło /test ')
+})
 
 
-
-app.listen(3000, 'localhost', ()=> {console.log("listening on localhost 3000")})
+app.listen(3001, 'localhost', ()=> {console.log("listening on localhost 3001")})
