@@ -30,10 +30,10 @@ app.get('/', (req,res)=>{
 app.get('/test', (req,res)=>{
     db.update('22279727-7622-44ca-af2e-23418b20eee6',
         {
-        "email" : "qpa@qpa.pl", }
+        "email" : "1111qpa@qpa.pl", }
     )
    res.send('poszło /test ')
 })
 
 
-app.listen(3003, 'localhost', ()=> {console.log("listening on localhost 3003")})
+app.listen(3005, 'localhost', ()=> {console.log("listening on localhost 3005")})

@@ -1,0 +1,29 @@
+<h1> lista klientów <h1>
+<table>
+    <thread>
+        <tr>
+            <th>
+                E-mail
+            </th>
+             <th>
+                Imie
+            </th>
+            <th>
+                action
+            </th>
+        </tr>
+    </thread>
+    <tbody>
+    {{#each clients}}
+        <th>
+            {{this.email}}
+        </th>
+        <td>
+            {{this.name}}
+        </td>
+        <td>
+            <a href='/client/{{this.id}}'> szczegóły </a>}
+        </td>
+    {{/each}}
+    </tbody>
+</table>

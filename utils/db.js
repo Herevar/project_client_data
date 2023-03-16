@@ -14,6 +14,11 @@ class Db {
     async _load(){
         this._data = JSON.parse(await readFile(this.dbFileName, 'utf8'));
     }
+    
+    _save(){
+       writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8')     
+    }
+    
     create(obj){
         console.log('kurwa',typeof(this.dbFileName))
         this._data.push(
@@ -23,7 +28,8 @@ class Db {
             ...obj,}); // wez wszystkie dane ktore chciał wstawic i dodaj jeszcze jedna info
         //rozporaszamy cała zawartość 'obj' i dodajemy kazdej pozycji id
         // writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8') //- to nie działa a to niżej tak XDDD
-        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8')
+        // writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8')
+       this. _save()
     }
     getall() {
         return this._data;
@@ -38,7 +44,14 @@ class Db {
             }
             else return oneObj
         })
-        writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8')
+        this. _save()
+    }
+    
+    getOne(id){
+        return this._data.find( oneObj => oneObj.id === id)
+    }
+    delete(id){
+        this._data = this._data.filter(oneObj => oneObj.id !== id)
     }
 }   
 
