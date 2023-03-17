@@ -1,12 +1,15 @@
 const express = require('express');
 const { urlencoded } = require('express');
 const hbs = require('express-handlebars');
+const methodOverride = require('method-override')
 const { clientRouter } = require('./routers/client');
 const { homeRouter } = require('./routers/home');
 const { db } = require('./utils/db');
 
 
 const app = express();
+
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({
     extends : true
 }));
@@ -28,12 +31,12 @@ app.get('/', (req,res)=>{
     res.render('test')
 })
 app.get('/test', (req,res)=>{
-    db.update('22279727-7622-44ca-af2e-23418b20eee6',
-        {
-        "email" : "1111qpa@qpa.pl", }
+    db.create(
+        {"name":"aghatata",
+        "email" : "a@pl", }
     )
    res.send('poszło /test ')
 })
 
 
-app.listen(3005, 'localhost', ()=> {console.log("listening on localhost 3005")})
+app.listen(3021, 'localhost', ()=> {console.log("listening on localhost 3000")})

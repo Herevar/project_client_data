@@ -1,5 +1,9 @@
 <h1> lista klientów <h1>
+
+
+
 <table>
+
     <thread>
         <tr>
             <th>
@@ -22,7 +26,8 @@
             {{this.name}}
         </td>
         <td>
-            <a href='/client/{{this.id}}'> szczegóły </a>}
+            <a href='/client/{{this.id}}'> szczegóły </a>
+            <form method="POST" action="/client/{{this.id}}?_method=DELETE"><button type="submit">Usuń</button></form>
         </td>
     {{/each}}
     </tbody>
