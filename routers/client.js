@@ -24,7 +24,8 @@ clientRouter
     })
     
     .delete('/:id', (req,res)=> {
-        res.send('usun!1!')      
+        res.send('usun!1!')  
+        //res.render(clients/hbs_z_usuwaniem_info_+_przekerowanie_gdzies_tam)    
     })
     //trzeba zainstalowac (npm i method-override), pobrac moduł i uzyc middleware'a z odpowiednia metoda "_method"
 
