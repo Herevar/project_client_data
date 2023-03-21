@@ -27,8 +27,8 @@
         </td>
         <td>
             <a href='/client/{{this.id}}'> szczegóły </a>
-            <form method="POST" action="/client/{{this.id}}?_method=DELETE"><button type="submit">Usuń</button></form>
-            <p>nie działa kurwa</p>
+            <form method="POST" action="/client/del/{{this.id}}?_method=DELETE"><button type="submit">Usuń</button></form>
+            
         </td>
     {{/each}}
     </tbody>
