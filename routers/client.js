@@ -29,7 +29,12 @@ clientRouter
         //res.render(clients/hbs_z_usuwaniem_info_+_przekerowanie_gdzies_tam)    
     })
     //trzeba zainstalowac (npm i method-override), pobrac moduł i uzyc middleware'a z odpowiednia metoda "_method"
-
+    
+    .get('/form/add', (req,res)=> {
+        res.render('clients/forms/add', {
+            // clients : db.getall(),
+        })
+    })
 
 
 module.exports = {clientRouter}
