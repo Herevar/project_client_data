@@ -7,6 +7,6 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "start": "npx nodemon index.js"
+    "start": "node index.js"
   }
 }

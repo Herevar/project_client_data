@@ -39,4 +39,5 @@ app.get('/test', (req,res)=>{
 })
 
 //jebane porty - jak pozamykac
-app.listen(3014, 'localhost', ()=> {console.log("listening on localhost 3014")})
+app.listen(3015, 'localhost', ()=> {console.log("listening on localhost 3015")})
+//package.json// "start": "npx nodemon index.js"

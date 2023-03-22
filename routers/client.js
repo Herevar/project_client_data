@@ -25,7 +25,7 @@ clientRouter
     
     .delete('/del/:id', (req,res)=> {
         db.delete(req.params.id)
-        res.send('delete test')  
+        res.render('clients/deleted') 
         //res.render(clients/hbs_z_usuwaniem_info_+_przekerowanie_gdzies_tam)    
     })
     //trzeba zainstalowac (npm i method-override), pobrac moduł i uzyc middleware'a z odpowiednia metoda "_method"
@@ -33,3 +33,4 @@ clientRouter
 
 
 module.exports = {clientRouter}
+
