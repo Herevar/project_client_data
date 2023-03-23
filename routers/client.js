@@ -42,6 +42,12 @@ clientRouter
             // clients : db.getall(),
         })
     })
+    //tu bedzie przeskok do edycji w .hbs tego co dodawano w add.hbs , a pozniej stamtad wysłane do .PUT
+    .get('/form/edit', (req,res)=> {
+        res.render('clients/forms/add', {
+            // clients : db.getall(),
+        })
+    })
 
 
 module.exports = {clientRouter}
