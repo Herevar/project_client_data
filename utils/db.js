@@ -21,15 +21,18 @@ class Db {
     
     create(obj){
         console.log('kurwa',typeof(this.dbFileName))
+        const id = v4()
+        // mozna tez ponizej id : v4() ale lepiej tak zeby moc zwrocic id i sobie z niego skorzystac
         this._data.push(
             // obj)
             {
-            id : v4(),
+            id ,
             ...obj,}); // wez wszystkie dane ktore chciał wstawic i dodaj jeszcze jedna info
         //rozporaszamy cała zawartość 'obj' i dodajemy kazdej pozycji id
         // writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8') //- to nie działa a to niżej tak XDDD
         // writeFile(this.dbFileName, JSON.stringify(this._data), 'utf8')
-       this. _save()
+       this._save()
+       return id
     }
     getall() {
         return this._data;

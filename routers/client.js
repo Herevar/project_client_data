@@ -16,8 +16,14 @@ clientRouter
     })
     
     .post('/', (req,res)=> {
-        console.log(req.body)
-        res.send('dodaj!')
+        const id = db.create(req.body)
+        //wrocone id trzeba gdzies przypisac wiec do zmiennej-stałej "const id"
+        res.render('clients/added', {
+            id,
+        })
+        //trzeba przesłac jako dodatkowe parametr zeby w hbs móc np wyswietlić co dokladnie
+        // .render('clietns/added',{name : req.params.name})
+        //i pozniej {{name}}w hbs
     })
 
     .put('/id', (req,res)=> {
@@ -40,3 +46,5 @@ clientRouter
 
 module.exports = {clientRouter}
 
+
+//31:52 - czas od korego mowa o miejscu z edycja klienta
