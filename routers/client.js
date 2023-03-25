@@ -29,7 +29,7 @@ clientRouter
     .put('/:id', (req,res)=> {
         db.update(req.params.id, req.body)
         res.render('clients/edited', {
-            name : req.body.name,
+            name : req.body.name,  //body jest w body, a parametr jest powyzej ; " '/:id: "
             id: req.params.id
         })
     })
