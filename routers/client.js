@@ -26,8 +26,12 @@ clientRouter
         //i pozniej {{name}}w hbs
     })
 
-    .put('/id', (req,res)=> {
-        res.send('zmodyfikuj!')
+    .put('/:id', (req,res)=> {
+        db.update(req.params.id, req.body)
+        res.render('clients/edited', {
+            name : req.body.name,
+            id: req.params.id
+        })
     })
     
     .delete('/del/:id', (req,res)=> {
@@ -42,10 +46,10 @@ clientRouter
             // clients : db.getall(),
         })
     })
-    //tu bedzie przeskok do edycji w .hbs tego co dodawano w add.hbs , a pozniej stamtad wysłane do .PUT
-    .get('/form/edit', (req,res)=> {
-        res.render('clients/forms/add', {
-            // clients : db.getall(),
+    //tu bedzie przeskok do edycji w edit.hbs tego co dodawano w add.hbs , a pozniej stamtad wysłane do .PUT
+    .get('/form/edit/:id', (req,res)=> {
+        res.render('clients/forms/edit', {
+            client : db.getOne(req.params.id)
         })
     })
 
@@ -53,4 +57,4 @@ clientRouter
 module.exports = {clientRouter}
 
 
-//31:52 - czas od korego mowa o miejscu z edycja klienta
+

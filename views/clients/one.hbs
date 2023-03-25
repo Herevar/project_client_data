@@ -23,8 +23,9 @@
 
 
 <p>
-    {{!-- {{trzeba przesłać też id, bo wiadomo ze dla kazdej pozycji bedzie inny formularz - z .ge '/client/one' zostało tu przesłane parametry w "client: "}} --}}
-    <a href="/client/form/edit/">edytuj dane</a>
+    {{!-- {{trzeba przesłać też id, bo wiadomo ze dla kazdej pozycji bedzie inny formularz - 
+            z .get '/client/one' zostało tu przesłane parametry w "client: "}} --}}
+    <a href="/client/form/edit/{{client.id}}">edytuj dane</a>
 </p>
 <p>
 {{> go-to-clients}}
