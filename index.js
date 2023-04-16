@@ -14,7 +14,7 @@ app.use(express.urlencoded({
     extends : true
 }));
 app.use(express.json())
-app.use(express.static('public'))
+app.use(express.static('public')) // czyli to jako tako nie jest potrzebne
 app.engine(".hbs", hbs.engine({ 
   extname: ".hbs",  
 //   helpers: handlebarsHelpers, 
