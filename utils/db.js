@@ -6,8 +6,10 @@ const {v4} = require('uuid');
 class Db {
     constructor(dbFileName) {
         // this.dbFileName = './data/db.json'
-        this.dbFileName = join(__dirname, '../data', dbFileName);
-        this._load();
+        this.dbFileName = join(__dirname, '../data', dbFileName); //łaczymy folder nadrzedny  z -
+        // cofnieciem sie do samejgóry - przesłanym przy tworzeniu -> na samym dole nazwa pliku podana)
+        this._load(this.dbFileName);
+        console.log(this.dbFileName)
         console.log(typeof(this.dbFileName))
     }
     
